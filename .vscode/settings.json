@@ -12,6 +12,10 @@
         "**/src/catalog/systables/*.py.inc": "python",
         "**/src/catalog/systables/*.inc": "plaintext",
         "*.in": "cpp",
-        "*.dat": "plaintext"
+        "*.dat": "plaintext",
+        "atomic": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp"
     }
 }

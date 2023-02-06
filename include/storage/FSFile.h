@@ -112,6 +112,10 @@ public:
 
 private:
     // TODO implement it
+    int file_descriptor;
+    FSFile(int fd){
+        file_descriptor = fd;
+    }
 };
 
 /*!

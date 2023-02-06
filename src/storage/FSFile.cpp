@@ -11,14 +11,23 @@
 namespace taco {
 
 FSFile*
-FSFile::Open(const std::string& path, bool o_trunc,
+FSFile::Open(const std::string&path, bool o_trunc,
              bool o_direct, bool o_creat, mode_t mode) {
     // Hint: wse open(2) to obtain a file descriptor of the file for read/write.
     // The file should be opened with O_RDWR flag per specification.
     // Run "man 2 open" in the shell for details.
-
-    //TODO implement it
-    return nullptr;
+    int flags = O_RDWR;
+    if(o_trunc){
+        flags|=O_TRUNC;
+    }
+    if(o_direct){
+        flags|=O_DIRECT;
+    }
+    if(o_creat){
+        flags|=O_CREAT;
+    }
+    int fd = open(path.c_str(),flags,mode);
+   return fd  > 0? new FSFile(fd) : nullptr;
 }
 
 FSFile::~FSFile() {

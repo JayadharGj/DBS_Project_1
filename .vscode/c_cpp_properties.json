@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/util/abseil-cpp/include",
-                "/util/googletest/include"
+                "/util/googletest/include",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include"
             ],
             "defines": [
                 "TDB_IN_TEST"
