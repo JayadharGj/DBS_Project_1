@@ -1,69 +1,77 @@
-CSE462/562: Database Systems Course Project
-====================================
+**Summary:**
 
-Welcome to CSE462/562. In this semester long course project, you will build a
-mini database systems in the TDB (Taco-DB) framework. This readme contains
-a brief description of how to set up the build environment, compile and test
-the system. Please refer to the [course
-website](https://cse.buffalo.edu/~zzhao35/teaching/cse562_spring23) for
-lab-specific instructions.
+**CSE462/562: Database Systems Course Project**
 
-We have extensively tested the source code in the lab distribution but there
-could inevitably be bugs as in any project. To report a BUG, please post a
-**private** message in the Piazza to all TA and the
-instructor. It will made public once validated. Please refer to the course
-website for the policy of getting extra credit for successful reporting of
-bugs.
+In this semester-long course project, you will build a mini database system using the Taco-DB framework. This README contains instructions on how to set up the build environment, compile, and test the system.
 
-# Dependencies and system requirements
+**Dependencies and system requirements:**
 
-git, cmake >= 3.13, pkg-config (0.29 recommended; <= 0.25 will make the build
-extremely slow), c11 and c++11 compilers, e.g., gcc >= 7 or clang (not tested),
-make, autoconf (for jemalloc), python3
+* git
+* cmake >= 3.13
+* pkg-config (0.29 recommended; <= 0.25 will make the build extremely slow)
+* c11 and c++11 compilers (e.g., gcc >= 7 or clang)
+* make
+* autoconf (for jemalloc)
+* python3
 
-We recommend using recent Linux distributions on x86_64 platform. It's known to
-work on Ubuntu 20.04 and Fedora 35 with gcc.  It might not work as intended or
-is known to not work on other systems even if it compiles. The following is a
-non-exhaustive list:
+**Recommended platform:**
 
-    -OS: Mac OS, Windows WSL1, Cygwin, MSYS, Win32
+* Recent Linux distribution on x86_64 platform
 
-    -Non-x86_64: Apple laptops with M1 processor,
-    Microsoft Surface Pro X with SQ1 or SQ2
+**Known non-working platforms:**
 
-# How to build
+* Mac OS
+* Windows WSL1
+* Cygwin
+* MSYS
+* Win32
+* Non-x86_64 architectures (e.g., Apple laptops with M1 processor, Microsoft Surface Pro X with SQ1 or SQ2)
 
-To create a debug build in build/ directory, run
+**How to build:**
 
-    cmake -B build .
+To create a debug build in the `build/` directory, run:
 
-On the first build, it will also build the [jemalloc](http://jemalloc.net/)
-library and install it in **external/install** directory.
+```
+cmake -B build .
+```
 
-To create a release build in build.release/ directory, run
+On the first build, it will also build the jemalloc library and install it in the `external/install` directory.
 
-    cmake -DCMAKE_BUILD_TYPE=Release -B build.release .
+To create a release build in the `build.release/` directory, run:
 
-# How to test your implementation
+```
+cmake -DCMAKE_BUILD_TYPE=Release -B build.release .
+```
 
-We use the [GoogleTest](http://google.github.io/googletest/) framework with its
-community supported integration
-[ctest](https://cmake.org/cmake/help/latest/manual/ctest.1.html). For advanced usages,
-please review those documentations.
+**How to test your implementation:**
 
-To run all test, in your build directory:
+The project uses the GoogleTest framework with its community-supported CMake integration, ctest. For advanced usages, please review the GoogleTest and ctest documentation.
 
-    ctest
+To run all tests, in your build directory, run:
 
-To run an individual test, you may either use
+```
+ctest
+```
 
-    ctest -V -R <some_test_name_regex>
+To run an individual test, you may either use:
 
-or directly run
+```
+ctest -V -R <some_test_name_regex>
+```
 
-    ./tests/path-to-some-test
+or directly run:
 
-To list the project specific flags, run
+```
+./tests/path-to-some-test
+```
 
-    ./tests/path-to-some-test --help
+To list the project-specific flags, run:
 
+```
+./tests/path-to-some-test --help
+```
+
+**Additional notes:**
+
+* Please report any bugs to the course Piazza forum using a **private** message to all TAs and the instructor.
+* It is highly recommended to use a recent Linux distribution on x86_64 platform. The project might not work as intended or might not work at all on other systems, even if it compiles.
